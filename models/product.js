@@ -1,5 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+const getDb = require('../util/database').getDb;
+
+const Product {
+  constructor(title, price, description, imageUrl) {
+    this.title = title;
+    this.price = price;
+    this.description = description;
+    this.imageUrl = imageUrl;
+  }
+
+  save() {
+
+  }
+}
+
+
+module.exports = Product
 
 const Cart = require('./cart')
 
