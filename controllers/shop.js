@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const User = require('../models/users');
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll()
@@ -65,14 +66,25 @@ exports.postCart = (req, res, next) => {
   .catch(err => console.log(err));
 };
 
-// exports.postCartDeleteProduct = (req, res, next) => {
-//   const prodId = req.body.productId
-//   Product.findById(prodId, product => {
-//     Cart.deleteProduct(prodId, product.price); 
-//     res.redirect('/cart');
-//   })
-  
-// }
+exports.postCartDeleteProduct = (req, res, next) => {
+  const prodId = req.body.productId
+  req.user
+  .deleteItemFromCart(prodId)
+  .then(result => {
+    res.redirect('/cart');
+  })
+  .catch(err => console.log(err));
+}
+
+exports.postOrder = (req, res, next) => {
+  let fetchedCart;
+  req.user
+    .addOrder()
+    .then(result => {
+      res.redirect('/orders');
+    })
+    .catch(err => console.log(err));
+}
 
 exports.getOrders = (req, res, next) => {
   res.render('shop/orders', {
