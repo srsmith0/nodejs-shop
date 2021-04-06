@@ -8,7 +8,7 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 const errorController = require('./controllers/error');
-const User = require('./models/users');
+const User = require('./models/user');
 
 const MONGODB_URI = process.env.DATABASE_PATH
 
@@ -60,22 +60,10 @@ app.use(errorController.get404);
 
 mongoose
   .connect(MONGODB_URI)
-    .then(result => {
-      User.findOne().then(user => {
-        if(!user) {
-          const user = new User({
-            name: 'Shawn',
-            email: 'shawn@test.com',
-            cart: {
-              items: []
-            }
-          });
-          user.save();
-        }
-      })
-      app.listen(3000);
-    }).catch(err => {
-      console.log(err);
-    });
+  .then(result => {
+    app.listen(3000);
+  }).catch(err => {
+    console.log(err);
+  });
 
 
