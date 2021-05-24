@@ -2,6 +2,7 @@ const path = require('path');
 require('dotenv').config();
 
 const express = require('express');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -49,6 +50,8 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
+
+app.use(helmet());
 
 app.use(express.urlencoded());
 app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('image'));
@@ -115,7 +118,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
   }).catch(err => {
     console.log(err);
   });
