@@ -1,0 +1,5 @@
+::1 - - [24/May/2021:01:09:33 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [24/May/2021:01:09:33 +0000] "GET /css/main.css HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [24/May/2021:01:09:33 +0000] "GET /css/product.css HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [24/May/2021:01:09:34 +0000] "GET /js/main.js HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [24/May/2021:01:09:34 +0000] "GET /images/30045c7c-ebdf-4fe4-a45b-ee40a16da6fe-dan-gold-N7RiDzfF2iw-unsplash%20(1).jpg HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
